@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"sync"
+	"tailscale.com/util/dnsname"
 
 	"github.com/hashicorp/hcl"
 	"github.com/spiffe/go-spiffe/v2/spiffeid"
@@ -71,7 +72,8 @@ func (p *Plugin) Attest(stream nodeattestorv1.NodeAttestor_AttestServer) error {
 		return fmt.Errorf("unable to find provided client key")
 	}
 
-	id, err := agentID(c.trustDomain, fmt.Sprintf("/%s/%s", PluginName, node.HostName))
+	sanitizeHostname := dnsname.SanitizeHostname(node.HostName)
+	id, err := agentID(c.trustDomain, fmt.Sprintf("/%s/%s", PluginName, sanitizeHostname))
 	if err != nil {
 		return err
 	}
