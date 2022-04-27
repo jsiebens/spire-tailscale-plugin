@@ -1,5 +1,7 @@
 # SPIRE Tailscale Plugin
 
+> :warning:  this project is still WIP and experimental (see [#1](https://github.com/jsiebens/spire-tailscale-plugin/issues/1))
+ 
 This repository contains agent and server plugins for [SPIRE](https://github.com/spiffe/spire) to allow [Tailscale](https://tailscale.com) node attestation.
 
 ## Quick Start
