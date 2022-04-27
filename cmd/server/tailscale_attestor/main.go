@@ -3,9 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"sync"
-	"tailscale.com/util/dnsname"
-
 	"github.com/hashicorp/hcl"
 	"github.com/spiffe/go-spiffe/v2/spiffeid"
 	"github.com/spiffe/spire-plugin-sdk/pluginmain"
@@ -13,6 +10,7 @@ import (
 	configv1 "github.com/spiffe/spire-plugin-sdk/proto/spire/service/common/config/v1"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
+	"sync"
 	"tailscale.com/client/tailscale"
 	"tailscale.com/ipn/ipnstate"
 	"tailscale.com/types/key"
@@ -72,8 +70,7 @@ func (p *Plugin) Attest(stream nodeattestorv1.NodeAttestor_AttestServer) error {
 		return fmt.Errorf("unable to find provided client key")
 	}
 
-	sanitizeHostname := dnsname.SanitizeHostname(node.HostName)
-	id, err := agentID(c.trustDomain, fmt.Sprintf("/%s/%s", PluginName, sanitizeHostname))
+	id, err := agentID(c.trustDomain, fmt.Sprintf("/%s/%s", PluginName, node.DNSName))
 	if err != nil {
 		return err
 	}
