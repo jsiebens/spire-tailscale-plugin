@@ -34,8 +34,7 @@ NodeAttestor "tailscale" {
 
 ## How it Works
 
-This plugin automatically attests instances using the Tailscale OIDC Token. (a Tailscale feature still in WIP)
-The plugin operates as follows:
+This plugin automatically attests instances using the Tailscale OIDC Token (a Tailscale feature still in WIP), and operates as follows:
 
 1. Agent fetches a Tailscale OIDC token from the local `tailscaled` agent
 1. Agent sends the token to the server
