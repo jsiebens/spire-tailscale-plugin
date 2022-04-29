@@ -45,6 +45,7 @@ changelog:
       - Merge remote-tracking branch
       - Merge branch
       - go mod tidy
+      - update readme
   groups:
     - title: 'New Features'
       regexp: "^.*feat[(\\w)]*:+.*$"
