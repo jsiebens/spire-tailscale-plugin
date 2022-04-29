@@ -3,6 +3,7 @@ module github.com/jsiebens/spire-tailscale-plugin
 go 1.18
 
 require (
+	github.com/coreos/go-oidc/v3 v3.1.0
 	github.com/hashicorp/hcl v1.0.0
 	github.com/spiffe/go-spiffe/v2 v2.0.0
 	github.com/spiffe/spire-plugin-sdk v1.2.2
@@ -33,11 +34,14 @@ require (
 	go4.org/unsafe/assume-no-moving-gc v0.0.0-20211027215541-db492cf91b37 // indirect
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4 // indirect
 	golang.org/x/net v0.0.0-20220407224826-aac1ed45d8e3 // indirect
+	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20220412211240-33da011f77ad // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.zx2c4.com/wireguard/windows v0.4.10 // indirect
+	google.golang.org/appengine v1.4.0 // indirect
 	google.golang.org/genproto v0.0.0-20200806141610-86f49bd18e98 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
+	gopkg.in/square/go-jose.v2 v2.5.1 // indirect
 	inet.af/netaddr v0.0.0-20211027220019-c74959edd3b6 // indirect
 )
